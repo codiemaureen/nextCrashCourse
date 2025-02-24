@@ -1,10 +1,13 @@
+async function fetchRepos(){
+  const response = await fetch('https://api.github.com/users/codiemaureen/repos');
+  const repos = response.json();
+  return repos;
+}
 
-const ReposPage = () => {
-  return (
-    <div>
-      ReposPage
-    </div>
-  )
+const ReposPage = async () => {
+  const repos = await fetchRepos();
+  console.log(repos)
+  return <div>{repos[0].name}</div>;
 }
 
 export default ReposPage
