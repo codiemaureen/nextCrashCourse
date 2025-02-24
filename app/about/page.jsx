@@ -1,3 +1,7 @@
+export const metadata = {
+ title:'About Codie Codes 👩🏼‍💻'
+}
+
 const AboutPage = () => {
   return (
     <div>
