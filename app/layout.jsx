@@ -1,4 +1,5 @@
 import { Poppins, Geist, Geist_Mono } from "next/font/google";
+import Header from "./component/Header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,7 +26,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        {children}
+        <Header />
+        <main className="container">{children}</main>
       </body>
     </html>
   );
