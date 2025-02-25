@@ -3,6 +3,7 @@ import { FaStar, FaCodeBranch, FaEye} from 'react-icons/fa';
 
 async function fetchRepos(){
   const response = await fetch('https://api.github.com/users/codiemaureen/repos');
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const repos = response.json();
   return repos;
 }
@@ -15,7 +16,6 @@ const ReposPage = async () => {
     <h2>Repositories</h2>
     <ul className="repo-list">
       { repos.map((repo) => (
-
         <li key={repo.id}>
           <Link href={`/code/repos/${repo.name}`}>
             <h3>{ repo.name }</h3>
